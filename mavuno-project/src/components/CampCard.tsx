@@ -9,6 +9,11 @@ import { ageLabel, formatRange } from "@/lib/format"
 
 
 /* The words and pictures live here; dates, ages and open status come from the database */
+const REGISTER_PATH: Record<Camp["category"], string> = {
+  myf: "/register/myf",
+  mya: "/register/mya",
+}
+
 const CONTENT: Record<Camp["category"], { image: string; description: string; buttonClass: string }> = {
   myf: {
     image: "/assets/myf.png",
@@ -47,7 +52,7 @@ export function CampCard({ camp }: { camp: Camp }) {
       <CardFooter>
         {camp.registration_open ? (
           <Link
-            to={`/register?camp=${camp.category}`}
+            to={REGISTER_PATH[camp.category]}
             className={cn(buttonVariants({ size: "lg" }), "w-full", content.buttonClass)}
           >
             Register for {camp.category.toUpperCase()}
