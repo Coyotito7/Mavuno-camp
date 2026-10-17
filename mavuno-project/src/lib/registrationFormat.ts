@@ -17,6 +17,12 @@ export function limitToMaxWords(value: string, maxWords: number): string {
   return value.slice(0, last.index! + last[0].length)
 }
 
+export function isValidEmail(value: string): boolean {
+  const trimmed = value.trim()
+  if (trimmed.length === 0) return false
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)
+}
+
 export function isValidKenyaPhone(value: string): boolean {
   const digits = value.replace(/\D/g, "")
   if (digits.length === 0) return false
