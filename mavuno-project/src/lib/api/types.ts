@@ -102,3 +102,59 @@ export type Attendance = {
   departure_authorized_by: string | null
   notes: string | null
 }
+
+export type AttendanceStatus =
+  | "registered"
+  | "checked_in"
+  | "checked_out"
+
+export type ParticipantType = "camper" | "facilitator"
+
+export type Lookup = {
+  id: string
+  name: string
+}
+
+export type RosterRow = {
+  registration_id: string
+  camp_id: string
+  camp_name: string
+  participant_type: ParticipantType
+  first_name: string
+  last_name: string
+  age: number
+  gender: "male" | "female"
+  phone: string | null
+  email: string | null
+  campus: string | null
+  emergency_contact_name: string | null
+  emergency_contact_phone: string | null
+  attendance_status: AttendanceStatus
+  payment_status: Payment["status"] | null
+  checked_out_at: string | null
+  has_medical_condition: boolean
+  medical_details: string | null
+  has_special_needs: boolean
+  special_needs_details: string | null
+  created_at: string
+}
+
+export type DashboardCounts = {
+  camp_id: string
+  camp_name: string
+  total_registered_campers: number
+  present_on_site: number
+  pending_arrivals: number
+  departed: number
+  walk_in_registrations: number
+  online_checked_in: number
+  walk_in_checked_in: number
+  present_male: number
+  present_female: number
+  total_registered_facilitators: number
+}
+
+export type DashboardTotals = Omit<
+  DashboardCounts,
+  "camp_id" | "camp_name"
+>
