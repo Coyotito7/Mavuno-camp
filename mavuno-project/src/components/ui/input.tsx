@@ -1,22 +1,7 @@
-/**
- * Form Input Primitive (`app/components/ui/input.tsx`)
- *
- * Full-Stack UI Architecture:
- * Wraps `@base-ui/react/input` with accessible focus rings, aria-invalid error styling,
- * responsive text scaling (prevents iOS mobile zoom via 16px base / desktop 14px),
- * and dark theme integration.
- */
-
 import * as React from "react"
 import { Input as InputPrimitive } from "@base-ui/react/input"
 import { cn } from "cn"
 
-/**
- * Text Input Component (`Input`)
- *
- * @param {React.ComponentProps<"input">} props - Standard HTML input properties.
- * @returns {JSX.Element} Styled accessible input primitive.
- */
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <InputPrimitive
@@ -32,4 +17,3 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
 }
 
 export { Input }
-

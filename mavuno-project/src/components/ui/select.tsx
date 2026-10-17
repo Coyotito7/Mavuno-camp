@@ -1,21 +1,10 @@
-/**
- * Dropdown Select Primitive Suite (`app/components/ui/select.tsx`)
- *
- * Full-Stack UI Architecture:
- * Provides an accessible, keyboard-navigable combobox and select menu built on `@base-ui/react/select`.
- * Features automatic viewport positioning, collision detection, custom portal rendering,
- * and support for country dialing codes (`+254`, `+255`), Mavuno campus branches, and staff roles.
- */
-
 import * as React from "react"
 import { Select as SelectPrimitive } from "@base-ui/react/select"
 import { cn } from "cn"
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react"
 
-/** Root Select Provider (`Select`) */
 const Select = SelectPrimitive.Root
 
-/** Option Item Group Container (`SelectGroup`) */
 function SelectGroup({ className, ...props }: SelectPrimitive.Group.Props) {
   return (
     <SelectPrimitive.Group
@@ -26,7 +15,6 @@ function SelectGroup({ className, ...props }: SelectPrimitive.Group.Props) {
   )
 }
 
-/** Selected Value Presentation (`SelectValue`) */
 function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
   return (
     <SelectPrimitive.Value
@@ -37,7 +25,6 @@ function SelectValue({ className, ...props }: SelectPrimitive.Value.Props) {
   )
 }
 
-/** Trigger Button Opening Dropdown (`SelectTrigger`) */
 function SelectTrigger({
   className,
   size = "default",
@@ -66,7 +53,6 @@ function SelectTrigger({
   )
 }
 
-/** Select Dropdown Floating Content Container (`SelectContent`) */
 function SelectContent({
   className,
   children,
